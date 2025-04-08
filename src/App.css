@@ -1,0 +1,93 @@
+.container {
+margin: 0 auto;
+ width: 50%;
+ border: 1px solid black;
+ margin-top: 8rem;
+ border-radius: 10px;
+}
+.title{
+  text-align: center;
+  margin: 1rem;
+}
+.input-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-container input{
+  width: 60%;
+  height: 2rem;
+  border-radius: 8px 0px 0px 0px;
+  padding: 5px;
+  border-right: none;
+}
+.input-container input::placeholder{
+  font-size: small;
+}
+.input-container button{
+padding: 13.5px 20px;
+border-radius: 0px 0px 8px 0px;
+border-left: none;
+background-color: rgb(53, 223, 53);
+}
+
+.todo-list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+}
+.todo-list{
+  display: flex;
+   width: 80%;
+  border:1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  justify-content: center;
+  margin: 0.5rem;
+  gap: 5px;
+  align-items: center;
+}
+.todo-list span{
+margin-right: auto;
+
+}
+.todo-list .edit{
+background-color: rgb(0, 183, 255);
+padding: 6px 12px;
+border-radius: 8px 8px 8px 8px;
+cursor: pointer;
+}
+.todo-list .delete{
+  background-color: red;
+  padding: 6px 12px;
+  border-radius: 8px 8px 8px 8px;
+  cursor: pointer;
+}
+
+
+
+  @media (max-width: 600px) {
+    .todo-list{
+      flex-direction: column;
+      width: 90%;
+    }
+    .todo-list span{
+      margin:0 auto;
+      
+      }
+  }
+
+  .input-submit{
+    cursor: pointer;
+  }
+
+  .edit:hover,
+  .delete:hover,
+  .input-submit:hover{
+
+    color: white;
+    background-color: black;
+  }
