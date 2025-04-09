@@ -7,16 +7,22 @@ const Todoinput = ({ placeholder }) => {
   const [editIndex, setEditIndex] = useState(null);
 
   const handleSubmit = () => {
-    if (inputvalue.trim() !== '') {
-      if (editIndex !== null) {
-        const editedTasks = [...task];
-        editedTasks[editIndex] = inputvalue;
-        settask(editedTasks);
-        setEditIndex(null); 
+    if (inputvalue.length > 12) {
+      alert("Task input should be less than 12 characters");
+    } else {
+      if (inputvalue.trim() !== '') {
+        if (editIndex !== null) {
+          const editedTasks = [...task];
+          editedTasks[editIndex] = inputvalue;
+          settask(editedTasks);
+          setEditIndex(null);
+        } else {
+          settask([...task, inputvalue]);
+        }
+        setinputvalue('');
       } else {
-        settask([...task, inputvalue]);
+        alert("Task input is empty");
       }
-      setinputvalue('');
     }
   };
 
@@ -27,7 +33,7 @@ const Todoinput = ({ placeholder }) => {
 
   const handleEdit = (index) => {
     setinputvalue(task[index]);
-    setEditIndex(index);        
+    setEditIndex(index);
   };
   return (
     <>
